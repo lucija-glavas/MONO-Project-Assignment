@@ -1,0 +1,394 @@
+/* ELEMENTS */
+
+@import "../modules/_variables";
+@import "../modules/_mixins";
+@import "../modules/_colors";
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* INFO BOX */
+
+.info_box {
+
+  .info_box_inner {
+    width: 100%;
+    background-color: $color_white;
+    border: 1px solid $color_divider;
+    @include border_radius(10px);
+    padding: 30px;
+    display: table;
+  }
+
+  .icon_holder, .content_holder {
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+  }
+
+  .icon_holder {
+    width: 100px;
+
+    i, svg {
+      font-size: $font_lg;
+    }
+
+  }
+
+  .content_holder {
+    width: calc(100% - 100px);
+    width: -webkit-calc(100% - 100px);
+    width: -moz-calc(100% - 100px);
+
+    .info_box_value .unit {
+      color: $color_secondary_text;
+      font-size: $font_xs;
+      font-weight: $medium;
+      line-height: $font_xs;
+      margin-left: 10px;
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 1620px) {
+
+  .info_box {
+
+    .icon_holder {
+      width: auto;
+
+      i, svg {
+        font-size: $font_md;
+      }
+
+    }
+
+    .content_holder {
+      width: auto;
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+
+  .info_box {
+
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+
+    .icon_holder {
+
+      i, svg {
+        font-size: $font_sm;
+      }
+
+    }
+
+  }
+
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* MAP */
+
+.map_holder {
+  width: 100%;
+  @include border_radius(10px);
+  display: block;
+  position: relative;
+
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    @include border_radius(inherit);
+    vertical-align: middle;
+    position: relative;
+  }
+
+  .map_overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .map_point {
+    width: 50px;
+    height: 50px;
+    @include border_radius(100%);
+    position: absolute;
+    cursor: pointer;
+
+    &.map_point_1 {
+      background-color: $color_accent;
+      top: 20%;
+      left: 35%;
+    }
+
+    &.map_point_2 {
+      background-color: $color_primary_light;
+      top: 60%;
+      left: 15%;
+    }
+
+    &.map_point_3 {
+      background-color: $color_primary_dark;
+      top: 50%;
+      left: 75%;
+    }
+
+  }
+
+  .map_point_info {
+    width: 200px;
+    background-color: $color_white;
+    @include border_radius(10px);
+    text-align: center;
+    padding: 15px;
+    z-index: 99;
+    position: absolute;
+    opacity: 0;
+    @include transition(opacity, 0.35s, linear);
+
+    &::before {
+      content: "\f0d8";
+      color: $color_white;
+      font-family: "Font Awesome 5 Free";
+      font-size: $font_md;
+      font-weight: 900;
+      position: absolute;
+      top: -17px;
+      left: 50%;
+      @include translate(-50%, 0);
+    }
+
+    &.map_point_info_1 {
+      top: 115%;
+      left: -150%;
+    }
+
+    &.map_point_info_2 {
+      top: 115%;
+      left: -150%;
+    }
+
+    &.map_point_info_3 {
+      top: 115%;
+      left: -150%;
+    }
+
+  }
+
+  .map_point_1:hover .map_point_info_1, .map_point_2:hover .map_point_info_2, .map_point_3:hover .map_point_info_3 {
+    opacity: 1;
+  }
+
+}
+
+.map_legend {
+
+  li:not(:last-child) {
+    margin-right: 15px;
+  }
+
+}
+
+.map_filters {
+  text-align: right;
+
+  li a {
+    color: $color_secondary_text;
+
+    &.active {
+      color: $color_primary;
+    }
+
+    &:hover {
+      color: $color_accent;
+    }
+
+  }
+
+  li:not(:last-child) {
+    margin-right: 15px;
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+
+  .map_filters {
+    text-align: left;
+  }
+
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* SCROLL-TO-TOP BUTTON */
+
+.scroll_to_top {
+  width: 60px;
+  height: 60px;
+  background-color: transparent;
+  border: 2px solid $color_divider;
+  @include border_radius(10px);
+  line-height: 56px;
+  padding: 0;
+  display: none;
+  z-index: 9999;
+  position: fixed;
+  right: 25px;
+  bottom: 25px;
+  @include transition(all, 0.25s, linear);
+
+  i, svg {
+    color: $color_primary;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    @include translate(-50%, -50%);
+  }
+
+  &:active, &:focus, &:hover {
+    border-color: $color_accent;
+    background-color: $color_accent;
+
+    i, svg {
+      color: $color_white;
+    }
+
+  }
+
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* TABLES */
+
+.table {
+  background-color: $color_white;
+
+  th, td {
+    padding: 15px;
+  }
+
+  thead th {
+    text-transform: uppercase;
+    vertical-align: middle;
+
+    &:not(:first-child) {
+      text-align: center;
+    }
+
+  }
+
+  tbody td {
+    vertical-align: middle;
+
+    &:not(.product_info) {
+      text-align: center;
+    }
+
+    &.product_number {
+      width: 30px;
+      color: $color_secondary_text;
+      border-right: 0;
+      font-size: $font_lg;
+      font-weight: $bold;
+    }
+
+    &.product_info {
+      border-left: 0;
+
+      .product_name {
+        text-transform: uppercase;
+      }
+
+      .product_link {
+        display: block;
+      }
+
+    }
+
+    .unit {
+      color: $color_secondary_text;
+      font-size: $font_xxs;
+      line-height: $font_xxs;
+      margin-left: 5px;
+    }
+
+  }
+
+  & * {
+    border-color: $color_divider !important;
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+
+  .table tbody td.product_number {
+    font-size: $font_md;
+  }
+
+}
+
+.table_title_box {
+  background-color: $color_divider;
+  border-top-left-radius: 10px;
+  -webkit-border-top-left-radius: 10px;
+  -moz-border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  -webkit-border-top-right-radius: 10px;
+  -moz-border-top-right-radius: 10px;
+  position: relative;
+
+  .table_title {
+    text-transform: uppercase;
+    padding: 10px 15px;
+  }
+
+  .table_filters {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .table_filter {
+    width: 59px;
+    height: 59px;
+    @include border_radius(0);
+    line-height: 59px;
+    padding: 0;
+
+    &:last-child {
+      border-top-right-radius: 10px;
+      -webkit-border-top-right-radius: 10px;
+      -moz-border-top-right-radius: 10px;
+    }
+
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+
+  .table_title_box {
+
+    .table_filter {
+      width: 44px;
+      height: 44px;
+      line-height: 44px;
+    }
+
+  }
+
+}

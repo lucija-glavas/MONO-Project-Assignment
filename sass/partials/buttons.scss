@@ -1,0 +1,247 @@
+/* BUTTONS */
+
+@import "../modules/_variables";
+@import "../modules/_mixins";
+@import "../modules/_colors";
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* DEFAULT */
+
+button:focus {
+  outline: none !important;
+}
+
+.btn {
+  height: 50px;
+  border: 0;
+  @include border_radius(10px);
+  font-size: $font_xs;
+  font-style: normal;
+  font-weight: $medium;
+  letter-spacing: 0;
+  line-height: 50px;
+  text-align: center;
+  text-transform: none;
+  padding: 0 45px;
+  display: inline-block;
+  vertical-align: middle;
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  transform: perspective(1px) translateZ(0);
+  -webkit-transform: perspective(1px) translateZ(0);
+  @include transition(all, 0.25s, linear);
+
+  &::before {
+    content: "";
+    @include border_radius(100%);
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    @include scale(0);
+    @include transition(transform, 0.25s, ease-out);
+  }
+
+  &:active::before, &:focus::before, &:hover::before {
+    @include scale(2);
+  }
+
+  &.focus, &:focus {
+    @include box_shadow_none(1);
+    outline: 0;
+  }
+
+}
+
+.btn-sm {
+  height: 30px;
+  @include border_radius(50px);
+  line-height: 25px;
+  padding: 0 30px;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* ICON BUTTONS */
+
+.icon_left {
+
+  i, svg {
+    color: inherit;
+    margin-right: 10px;
+  }
+
+}
+
+.icon_right {
+
+  i, svg {
+    color: inherit;
+    margin-left: 10px;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    @include transition(transform, 0.1s, ease-out);
+  }
+
+  &:focus, &:hover, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+
+    i, svg {
+      transform: translateX(4px);
+      -webkit-transform: translateX(4px);
+    }
+
+  }
+
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* FULL BUTTONS */
+
+//Primary
+.btn-primary {
+  color: $color_white;
+  background-color: $color_primary;
+
+  &::before {
+    background-color: $color_primary_dark;
+  }
+
+  &:focus, &:hover, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+    color: $color_white;
+    background-color: $color_primary_dark;
+  }
+
+}
+
+//Secondary
+.btn-secondary {
+  color: $color_white;
+  background-color: $color_secondary_text;
+
+  &::before {
+    background-color: $color_primary;
+  }
+
+  &:focus, &:hover, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+    color: $color_white;
+    background-color: $color_primary;
+  }
+
+}
+
+//Success
+.btn-success {
+  color: $color_white;
+  background-color: $color_success;
+
+  &::before {
+    background-color: $color_primary_text;
+  }
+
+  &:focus, &:hover, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+    color: $color_white;
+    background-color: $color_primary_text;
+  }
+
+}
+
+//Danger
+.btn-danger {
+  color: $color_white;
+  background-color: $color_error;
+
+  &::before {
+    background-color: $color_primary_text;
+  }
+
+  &:focus, &:hover, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+    color: $color_white;
+    background-color: $color_primary_text;
+  }
+
+}
+
+//Warning
+.btn-warning {
+  color: $color_white;
+  background-color: $color_contrast;
+
+  &::before {
+    background-color: $color_primary_text;
+  }
+
+  &:focus, &:hover, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+    color: $color_white;
+    background-color: $color_primary_text;
+  }
+
+}
+
+//Info
+.btn-info {
+  color: $color_white;
+  background-color: $color_accent;
+
+  &::before {
+    background-color: $color_primary;
+  }
+
+  &:focus, &:hover, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+    color: $color_white;
+    background-color: $color_primary;
+  }
+
+}
+
+//Light
+.btn-light {
+  color: $color_primary_text;
+  background-color: $color_white;
+
+  &::before {
+    background-color: $color_primary;
+  }
+
+  &:focus, &:hover, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+    color: $color_white;
+    background-color: $color_primary;
+  }
+
+}
+
+//Dark
+.btn-dark {
+  color: $color_white;
+  background-color: $color_primary_text;
+
+  &::before {
+    background-color: $color_primary;
+  }
+
+  &:focus, &:hover, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+    color: $color_white;
+    background-color: $color_primary;
+  }
+
+}
+
+//Link
+.btn-link {
+  color: $color_primary;
+  background-color: transparent;
+
+  &::before {
+    display: none;
+  }
+
+  &:focus, &:hover, &:not(:disabled):not(.disabled).active, &:not(:disabled):not(.disabled):active {
+    color: $color_accent;
+    background-color: transparent;
+  }
+
+}

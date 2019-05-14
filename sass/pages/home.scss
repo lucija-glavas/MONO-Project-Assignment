@@ -1,0 +1,17 @@
+/* HOMEPAGE */
+
+@import "../modules/_variables";
+@import "../modules/_mixins";
+@import "../modules/_colors";
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* HOMEPAGE HEADER */
+
+@media screen and (max-width: 1400px) {
+
+  .home .content:not(.full) .info_box:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+}

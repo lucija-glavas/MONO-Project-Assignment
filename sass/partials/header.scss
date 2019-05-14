@@ -1,0 +1,103 @@
+/* HEADER */
+
+@import "../modules/_variables";
+@import "../modules/_mixins";
+@import "../modules/_colors";
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* HERO HEADER */
+
+.hero_header {
+  width: 100%;
+  height: 550px;
+  background-attachment: scroll;
+  background-color: $color_primary;
+  background-image: url(../img/bg/hero-header-full.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  @include bg_size(cover);
+  @include border_radius(10px);
+  display: block;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    @include border_radius(inherit);
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .hero_header_inner {
+    width: 100%;
+    @include border_radius(inherit);
+    text-align: left;
+    padding: 30px;
+    vertical-align: middle;
+    position: absolute;
+    top: 50%;
+    @include translate(0, -50%);
+  }
+
+  .hero_title, .hero_subtitle {
+    color: $color_white;
+  }
+
+}
+
+@media screen and (max-width: 992px) {
+
+  .hero_header {
+    height: 350px;
+  }
+
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* SITE HEADER */
+
+.site_header {
+  height: 80px;
+  background-color: $color_white;
+  border-bottom: 2px solid $color_divider;
+  line-height: 80px;
+  z-index: 999;
+  position: sticky;
+
+  .site_header_inner {
+    height: inherit;
+    line-height: inherit;
+  }
+
+  .page_title {
+    font-size: $font_sm;
+    line-height: inherit;
+    text-transform: uppercase;
+    display: inline-block;
+  }
+
+  .site_header_buttons {
+    font-size: $font_sm;
+    text-align: right;
+
+    .header_btn:not(:last-child) {
+      color: $color_secondary_text;
+      margin-right: 15px;
+    }
+
+    .header_logout_btn {
+      color: $color_primary;
+    }
+
+    .header_btn:hover {
+      color: $color_accent;
+    }
+
+  }
+
+}

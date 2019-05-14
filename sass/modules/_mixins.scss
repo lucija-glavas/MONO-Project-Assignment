@@ -1,0 +1,171 @@
+/* NMIXINS */
+
+@import "../modules/_variables";
+@import "../modules/_colors";
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+//Boxes
+
+@mixin bg_size($size) {
+  background-size: $size;
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  -o-background-size: $size;
+}
+
+@mixin border_radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+/*
+  Box shadow
+   $horizontal_offset - The horizontal offset of the shadow. A positive value puts the shadow on the right side of the box, a negative value puts the shadow on the left side of the box.
+   $vertical_offset - The vertical offset of the shadow. A positive value puts the shadow below the box, a negative value puts the shadow above the box.
+   $blur - The blur radius. The higher the number, the more blurred the shadow will be.
+   $spread - The spread radius. A positive value increases the size of the shadow, a negative value decreases the size of the shadow.
+   $color - The color of the shadow. The default value is the text color.
+   inset - Optional. Changes the shadow from an outer shadow (outset) to an inner shadow.
+*/
+
+@mixin box_shadow_in($horizontal_offset, $vertical_offset, $blur, $spread, $color) {
+  box-shadow: $horizontal_offset $vertical_offset $blur $spread $color inset;
+  -webkit-box-shadow: $horizontal_offset $vertical_offset $blur $spread $color inset;
+  -moz-box-shadow: $horizontal_offset $vertical_offset $blur $spread $color inset;
+}
+
+@mixin box_shadow_out($horizontal_offset, $vertical_offset, $blur, $spread, $color) {
+  box-shadow: $horizontal_offset $vertical_offset $blur $spread $color;
+  -webkit-box-shadow: $horizontal_offset $vertical_offset $blur $spread $color;
+  -moz-box-shadow: $horizontal_offset $vertical_offset $blur $spread $color;
+}
+
+@mixin box_shadow_none($important) {
+  @if $important == 1 {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+    -moz-box-shadow: none !important;
+  }
+  @else {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+  }
+}
+
+@mixin box_sizing($value) {
+  box-sizing: $value;
+  -webkit-box-sizing: $value;
+  -moz-box-sizing: $value;
+}
+
+@mixin mask_img($link) {
+  mask-image: url($link);
+  -webkit-mask-image: url($link);
+}
+
+@mixin mask_size($size) {
+  mask-size: $size;
+  -webkit-mask-size: $size;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+//Flexbox
+
+@mixin display_flex {
+  display: flex;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+}
+
+@mixin flex_direction($direction) {
+  flex-direction: $direction;
+  -webkit-flex-direction: $direction;
+  -moz-flex-direction: $direction;
+  -ms-flex-direction: $direction;
+}
+
+@mixin box_direction($direction) {
+  box-direction: $direction;
+  -webkit-box-direction: $direction;
+  -moz-box-direction: $direction;
+}
+
+@mixin box_orient($orient) {
+  box-orient: $orient;
+  -webkit-box-orient: $orient;
+  -moz-box-orient: $orient;
+}
+
+@mixin flex_wrap($wrap) {
+  flex-wrap: $wrap;
+  -webkit-flex-wrap: $wrap;
+  -moz-flex-wrap: $wrap;
+  -ms-flex-wrap: $wrap;
+}
+
+@mixin align_items($alignment) {
+  align-items: $alignment;
+  -webkit-align-items: $alignment;
+}
+
+@mixin box_align($alignment) {
+  box-align: $alignment;
+  -webkit-box-align: $alignment;
+  -moz-box-align: $alignment;
+  -ms-flex-align: $alignment;
+}
+
+@mixin justify_content($justify) {
+  justify-content: $justify;
+  -webkit-justify-content: $justify;
+  -moz-justify-content: $justify;
+}
+
+@mixin box_pack($pack) {
+  box-pack: $pack;
+  -webkit-box-pack: $pack;
+  -moz-box-pack: $pack;
+  -webkit-flex-pack: $pack;
+  -moz-flex-pack: $pack;
+  -ms-flex-pack: $pack;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+//Transition and transformations
+
+@mixin transition($property, $duration, $function) {
+  transition-property: $property;
+  -webkit-transition-property: $property;
+  -moz-transition-property: $property;
+  -o-transition-property: $property;
+  transition-duration: $duration;
+  -webkit-transition-duration: $duration;
+  -moz-transition-duration: $duration;
+  -o-transition-duration: $duration;
+  transition-timing-function: $function;
+  -webkit-transition-timing-function: $function;
+  -moz-transition-timing-function: $function;
+  -o-transition-timing-function: $function;
+}
+
+@mixin translate($x, $y) {
+  transform: translate($x, $y);
+  -webkit-transform: translate($x, $y);
+  -moz-transform: translate($x, $y);
+  -ms-transform: translate($x, $y);
+  -o-transform: translate($x, $y);
+}
+
+@mixin scale($x) {
+  transform: scale($x);
+  -webkit-transform: scale($x);
+  -moz-transform: scale($x);
+  -ms-transform: scale($x);
+  -o-transform: scale($x);
+}

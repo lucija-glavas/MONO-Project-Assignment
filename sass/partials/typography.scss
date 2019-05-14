@@ -1,0 +1,158 @@
+/* TYPOHRAPHY */
+
+@import "../modules/_variables";
+@import "../modules/_mixins";
+@import "../modules/_colors";
+@import "../modules/_fonts";
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* BASE FONT */
+
+body {
+  color: $color_secondary_text;
+  font-family: $font_sans;
+  font-size: $font_xs;
+  font-weight: $regular;
+  font-style: normal;
+  letter-spacing: 0;
+  line-height: $font_xs * $phi;
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* HEADINGS */
+
+h1, h2, h3, h4, h5, h6 {
+  color: $color_primary_text;
+  font-style: normal;
+  font-weight: $bold;
+  text-transform: none;
+  margin-top: 0;
+  margin-bottom: 0;
+  position: relative;
+
+  a {
+    color: inherit;
+  }
+
+}
+
+//Heading 1
+h1 {
+  font-size: $font_lg;
+  line-height: $font_lg * $phi;
+}
+
+@media screen and (max-width: 992px) {
+
+  h1 {
+    font-size: $font_md;
+    line-height: $font_md * $phi;
+  }
+
+}
+
+//Heading 2
+h2 {
+  font-size: $font_md;
+  line-height: $font_md * $phi;
+}
+
+@media screen and (max-width: 992px) {
+
+  h2 {
+    font-size: $font_sm;
+    line-height: $font_sm * $phi;
+  }
+
+}
+
+//Heading 3
+h3 {
+  font-size: $font_sm;
+  line-height: $font_sm * $phi;
+}
+
+@media screen and (max-width: 992px) {
+
+  h3 {
+    font-size: $font_xs;
+    line-height: $font_xs * $phi;
+  }
+
+}
+
+//Heading 4
+h4 {
+  font-size: $font_sm;
+  font-weight: $medium;
+  line-height: $font_sm * $phi;
+}
+
+@media screen and (max-width: 992px) {
+
+  h4 {
+    font-size: $font_xs;
+    line-height: $font_xs * $phi;
+  }
+
+}
+
+//Heading 5
+h5 {
+  font-size: $font_xs;
+  line-height: $font_xs * $phi;
+}
+
+//Heading 6
+h6 {
+  font-size: $font_xs;
+  line-height: $font_xs * $phi;
+}
+
+.section_title {
+  text-transform: uppercase;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+/* LINKS */
+
+a {
+  color: $color_primary;
+  font-weight: $bold;
+  text-decoration: none;
+  @include transition(all, 0.25s, linear);
+
+  &:active, &:focus, &:hover {
+    color: $color_accent;
+    text-decoration: none;
+    outline: none;
+  }
+
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* PARAGRAPH */
+
+p {
+  margin-bottom: 15px;
+}
+
+@media screen and (max-width: 768px) {
+
+  p {
+    margin-bottom: 10px;
+  }
+
+}
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+/* STRONG */
+
+strong {
+  font-weight: $bold;
+}

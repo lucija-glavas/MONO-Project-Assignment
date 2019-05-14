@@ -1,0 +1,22 @@
+/* MAIN SCSS FILE */
+
+//@import "compass/reset";
+
+@import "../lib/bootstrap/css/bootstrap.min.css";
+@import "../lib/fontawesome/css/all.min.css";
+
+@import "modules/_variables";
+@import "modules/_mixins";
+@import "modules/_colors";
+@import "modules/_fonts";
+
+@import "partials/typography";
+@import "partials/buttons";
+@import "partials/general";
+@import "partials/elements";
+@import "partials/header";
+@import "partials/navigation";
+@import "partials/footer";
+
+@import "pages/all";
+@import "pages/home";

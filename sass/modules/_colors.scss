@@ -1,0 +1,41 @@
+/* COLORS */
+
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------- */
+
+$color_primary: #356988;
+$color_primary_light: #36759A;
+$color_primary_dark: #2B5F7B;
+$color_primary_text: #292929;
+$color_secondary_text: #828282;
+$color_accent: #00AFA9;
+$color_contrast: #FFB22A;
+$color_divider: #ECECEC;
+$color_whitish: #F7F7F7;
+$color_white: #FFF;
+$color_success: #009344;
+$color_error: #B80005;
+
+.color_primary {
+  color: $color_primary;
+}
+
+.color_primary_light {
+  color: $color_primary_light;
+}
+
+.color_primary_text {
+  color: $color_primary_text;
+}
+
+
+.color_accent {
+  color: $color_accent;
+}
+
+.color_success {
+  color: $color_success;
+}
+
+.color_error {
+  color: $color_error;
+}
